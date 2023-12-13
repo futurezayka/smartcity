@@ -1,0 +1,10 @@
+{% load static %}
+
+{% for new in news %}
+    <div>
+        <h2>{{ new.title }}</h2>
+        <p>{{ new.content }}</p>
+        <p>{{ new.date }}</p>
+        <img src="{{ new.image.url }} " alt="">
+    </div>
+{% endfor %}
