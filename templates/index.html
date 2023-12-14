@@ -83,21 +83,29 @@
         </section>
         <section class="news-section">
             <div class="vacancy-header">
-                <h3 class="vacancy-title">Вакансії</h3>
-                <button class="apply-btn">Подати заявку</button>
+                <h3 class="vacancy-title">Новини</h3>
+                <button class="apply-btn">Всі новини</button>
+            </div>
+            <div class="news-cards">
+<!--                {% for new in news %}-->
+                <div class="news-card">
+                    <img src="../photo_5458760346836784154_x.jpg " alt="">
+                    <p class="date">{{ new.date }}</p>
+                    <h2>{{ new.title }}</h2>
+                    <p>{{ new.content }}</p>
+                </div>
+                <div class="news-card">
+                    <img src="../photo_5458760346836784154_x.jpg " alt="">
+                    <p class="date">{{ new.date }}</p>
+                    <h2>{{ new.title }}</h2>
+                    <p>{{ new.content }}</p>
+
+                </div>
+<!--                {% endfor %}-->
             </div>
         </section>
     </main>
 </div>
 
-{% for new in news %}
-<div>
-    <h2>{{ new.title }}</h2>
-    <p>{{ new.content }}</p>
-    <p>{{ new.date }}</p>
-
-    <img src="{{ new.image.url }} " alt="">
-</div>
-{% endfor %}
 </body>
 </html>
