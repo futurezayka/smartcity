@@ -166,7 +166,7 @@ body {
 
 .vacancy-cards {
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -198,5 +198,33 @@ body {
 
 .news-section {
     padding: 100px 150px;
+}
+
+.news-cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news-card {
+    position: relative;
+    background-color: #CFCBC8;
+    width: 45%;
+    height: 450px;
+    overflow: hidden;
+    padding: 120px 30px 30px 30px;
+}
+
+.news-card img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    top: -25%;
+    left: 40%;
+}
+
+.date {
+    font-size: 48px;
+    font-weight: 700;
 }
 

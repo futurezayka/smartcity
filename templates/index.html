@@ -1,12 +1,13 @@
-{% load static %}
 
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Лендинг с фиксированным сайдбаром</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
+
 <body>
 <div class="box">
     <div class="sidebar">
@@ -22,20 +23,18 @@
         </div>
     </div>
     <main class="main-content">
-        <section class="hero-section">
-            <h2 class="hero-title">Kyiv <br>
-                <span>smart city</span></h2>
-            <img class="hero-img" src="{% static 'img/photo_5458760346836784154_x.jpg' %}">
-        </section>
+       <section class="hero-section">
+             <h2 class="hero-title">Kyiv <br>
+                 <span>smart city</span></h2>
+             <img class="hero-img" src="../photo_5458760346836784154_x.jpg">
+       </section>
         <section class="about-section">
-            <img class="about-img" src="{% static 'img/photo_5458760346836784154_x.jpg' %}">
+            <img class="about-img" src="../photo_5458760346836784154_x.jpg">
             <div class="about-text-box">
                 <h2 class="about-title">про проєкт</h2>
-                <p class="about-text">Poltava Smart City — це інформаційна екосистема, яка об’єднує полтавців, бізнес та
-                    владу задля перетворення
+                <p class="about-text">Poltava Smart City — це інформаційна екосистема, яка об’єднує полтавців, бізнес та владу задля перетворення
                     Полтави на цифрове та прогресивне місто. Робота ініціативи базується на принципах відкритих даних,
-                    розумного використання цифрових послуг та прозорого управління. Місто у смартфоні — це основна ідея
-                    проекту.</p>
+                    розумного використання цифрових послуг та прозорого управління. Місто у смартфоні — це основна ідея проекту.</p>
             </div>
         </section>
         <section class="resume-section">
@@ -49,39 +48,37 @@
             </form>
         </section>
         <section class="about-section">
-            <img class="about-img" src="{% static 'img/photo_5458760346836784154_x.jpg' %}">
+            <img class="about-img" src="../photo_5458760346836784154_x.jpg">
             <div class="about-text-box">
                 <h2 class="about-title">про проєкт</h2>
-                <p class="about-text">Poltava Smart City — це інформаційна екосистема, яка об’єднує полтавців, бізнес та
-                    владу задля перетворення
+                <p class="about-text">Poltava Smart City — це інформаційна екосистема, яка об’єднує полтавців, бізнес та владу задля перетворення
                     Полтави на цифрове та прогресивне місто. Робота ініціативи базується на принципах відкритих даних,
-                    розумного використання цифрових послуг та прозорого управління. Місто у смартфоні — це основна ідея
-                    проекту.</p>
+                    розумного використання цифрових послуг та прозорого управління. Місто у смартфоні — це основна ідея проекту.</p>
             </div>
         </section>
         <section class="vacancy-section">
-            <div class="vacancy-header">
-                <h3 class="vacancy-title">Вакансії</h3>
-                <button class="apply-btn">Подати заявку</button>
-            </div>
+      <div class="vacancy-header">
+          <h3 class="vacancy-title">Вакансії</h3>
+          <button class="apply-btn">Подати заявку</button>
+      </div>
             <div class="vacancy-cards">
-                <!--                {% for vacancy in vacancies %}-->
-                    <div class="vacancy-card">
-                        <img src="{% static 'img/photo_5458760346836784154_x.jpg' %}">
-                        <h2>{{ vacancy.title }}</h2>
-                        <p>{{ vacancy.content }}</p>
-                    </div>
-                    <div class="vacancy-card">
-                        <img src="{% static 'img/photo_5458760346836784154_x.jpg' %}">
-                        <h2>{{ vacancy.title }}</h2>
-                        <p>{{ vacancy.content }}</p>
-                    </div>
-                    <div class="vacancy-card">
-                        <img src="{% static 'img/photo_5458760346836784154_x.jpg' %}">
-                        <h2>{{ vacancy.title }}</h2>
-                        <p>{{ vacancy.content }}</p>
-                    </div>
-                    <!--                {% endfor %}-->
+<!--                {% for vacancy in vacancies %}-->
+                <div class="vacancy-card">
+                    <img src="../photo_5458760346836784154_x.jpg" alt="">
+                    <h2>{{ vacancy.title }}</h2>
+                    <p>{{ vacancy.content }}</p>
+                </div>
+                <div class="vacancy-card">
+                    <img src="../photo_5458760346836784154_x.jpg" alt="">
+                    <h2>{{ vacancy.title }}</h2>
+                    <p>{{ vacancy.content }}</p>
+                </div>
+                <div class="vacancy-card">
+                    <img src="../photo_5458760346836784154_x.jpg" alt="">
+                    <h2>{{ vacancy.title }}</h2>
+                    <p>{{ vacancy.content }}</p>
+                </div>
+<!--                {% endfor %}-->
             </div>
         </section>
         <section class="news-section">
@@ -94,13 +91,13 @@
 </div>
 
 {% for new in news %}
-    <div>
-        <h2>{{ new.title }}</h2>
-        <p>{{ new.content }}</p>
-        <p>{{ new.date }}</p>
+<div>
+    <h2>{{ new.title }}</h2>
+    <p>{{ new.content }}</p>
+    <p>{{ new.date }}</p>
 
-        <img src="{{ new.image.url }} " alt="">
-    </div>
+    <img src="{{ new.image.url }} " alt="">
+</div>
 {% endfor %}
 </body>
 </html>
