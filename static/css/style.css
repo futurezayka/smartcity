@@ -224,7 +224,25 @@ body {
 }
 
 .date {
-    font-size: 48px;
+    font-size: 32px;
     font-weight: 700;
+}
+
+footer {
+    background-color: #EC9704;
+    padding: 50px 100px;
+    text-align: center;
+}
+
+footer p {
+    margin-top: 6px;
+    color: #fff;
+    font-size: 14px;
+}
+
+footer img {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
 }
 
