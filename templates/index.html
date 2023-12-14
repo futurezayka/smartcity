@@ -62,14 +62,29 @@
           <button class="apply-btn">Подати заявку</button>
       </div>
             <div class="vacancy-cards">
-                {% for vacancy in vacancies %}
-                <div>
+<!--                {% for vacancy in vacancies %}-->
+                <div class="vacancy-card">
+                    <img src="../photo_5458760346836784154_x.jpg" alt="">
                     <h2>{{ vacancy.title }}</h2>
                     <p>{{ vacancy.content }}</p>
-
-                    <img src="{{ vacancy.image.url }} " alt="">
                 </div>
-                {% endfor %}
+                <div class="vacancy-card">
+                    <img src="../photo_5458760346836784154_x.jpg" alt="">
+                    <h2>{{ vacancy.title }}</h2>
+                    <p>{{ vacancy.content }}</p>
+                </div>
+                <div class="vacancy-card">
+                    <img src="../photo_5458760346836784154_x.jpg" alt="">
+                    <h2>{{ vacancy.title }}</h2>
+                    <p>{{ vacancy.content }}</p>
+                </div>
+<!--                {% endfor %}-->
+            </div>
+        </section>
+        <section class="news-section">
+            <div class="vacancy-header">
+                <h3 class="vacancy-title">Вакансії</h3>
+                <button class="apply-btn">Подати заявку</button>
             </div>
         </section>
     </main>
