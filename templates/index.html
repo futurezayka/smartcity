@@ -1,10 +1,88 @@
-{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Лендинг с фиксированным сайдбаром</title>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+
+<body>
+<div class="box">
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <h2 class="sidebar-title">Kyiv <br>
+                <span>smart city</span></h2>
+            <ul class="sidebar-links">
+                <a href="#">про проєкт</a>
+                <a href="#">робоча група</a>
+                <a href="#">вакансії</a>
+                <a href="#">новини</a>
+            </ul>
+        </div>
+    </div>
+    <main class="main-content">
+       <section class="hero-section">
+             <h2 class="hero-title">Kyiv <br>
+                 <span>smart city</span></h2>
+             <img class="hero-img" src="../photo_5458760346836784154_x.jpg">
+       </section>
+        <section class="about-section">
+            <img class="about-img" src="../photo_5458760346836784154_x.jpg">
+            <div class="about-text-box">
+                <h2 class="about-title">про проєкт</h2>
+                <p class="about-text">Poltava Smart City — це інформаційна екосистема, яка об’єднує полтавців, бізнес та владу задля перетворення
+                    Полтави на цифрове та прогресивне місто. Робота ініціативи базується на принципах відкритих даних,
+                    розумного використання цифрових послуг та прозорого управління. Місто у смартфоні — це основна ідея проекту.</p>
+            </div>
+        </section>
+        <section class="resume-section">
+            <h3 class="resume-title">долучитися до роботи</h3>
+            <form class="resume-form">
+                <input placeholder="Ім'я">
+                <input placeholder="Ім'я">
+                <input placeholder="Ім'я">
+                <input placeholder="Ім'я">
+                <button type="submit">Відправити</button>
+            </form>
+        </section>
+        <section class="about-section">
+            <img class="about-img" src="../photo_5458760346836784154_x.jpg">
+            <div class="about-text-box">
+                <h2 class="about-title">про проєкт</h2>
+                <p class="about-text">Poltava Smart City — це інформаційна екосистема, яка об’єднує полтавців, бізнес та владу задля перетворення
+                    Полтави на цифрове та прогресивне місто. Робота ініціативи базується на принципах відкритих даних,
+                    розумного використання цифрових послуг та прозорого управління. Місто у смартфоні — це основна ідея проекту.</p>
+            </div>
+        </section>
+        <section class="vacancy-section">
+      <div class="vacancy-header">
+          <h3 class="vacancy-title">Вакансії</h3>
+          <button class="apply-btn">Подати заявку</button>
+      </div>
+            <div class="vacancy-cards">
+                {% for vacancy in vacancies %}
+                <div>
+                    <h2>{{ vacancy.title }}</h2>
+                    <p>{{ vacancy.content }}</p>
+
+                    <img src="{{ vacancy.image.url }} " alt="">
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</div>
 
 {% for new in news %}
-    <div>
-        <h2>{{ new.title }}</h2>
-        <p>{{ new.content }}</p>
-        <p>{{ new.date }}</p>
-        <img src="{{ new.image.url }} " alt="">
-    </div>
+<div>
+    <h2>{{ new.title }}</h2>
+    <p>{{ new.content }}</p>
+    <p>{{ new.date }}</p>
+
+    <img src="{{ new.image.url }} " alt="">
+</div>
 {% endfor %}
+</body>
+</html>
