@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Лендинг с фиксированным сайдбаром</title>
 
-<!--    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">-->
+    <!--    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">-->
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
 </head>
 
@@ -27,10 +27,10 @@
         <section class="hero-section">
             <h2 class="hero-title">Kyiv <br>
                 <span>smart city</span></h2>
-            <img class="hero-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
+            <img class="hero-img" src="{% static 'img/photo_5458760346836784154_x.jpg' %}">
         </section>
         <section class="about-section">
-            <img class="about-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
+            <img class="about-img" src="{% static 'img/photo_5458760346836784154_x.jpg' %}">
             <div class="about-text-box">
                 <h2 class="about-title">про проєкт</h2>
                 <p class="about-text">Poltava Smart City — це інформаційна екосистема, яка об’єднує полтавців, бізнес та
@@ -42,16 +42,17 @@
         </section>
         <section class="resume-section">
             <h3 class="resume-title">долучитися до роботи</h3>
-            <form class="resume-form">
-                <input placeholder="Ім'я">
-                <input placeholder="Ім'я">
-                <input placeholder="Ім'я">
-                <input placeholder="Ім'я">
-                <button type="submit">Відправити</button>
+            <form class="resume-form" id="resumeForm">
+                {% csrf_token %}
+                <input placeholder="Прізвище" type="text" name="1" required>
+                <input placeholder="Прізвище" type="text" name="2" required>
+                <input placeholder="Прізвище" type="text" name="3" required>
+                <input placeholder="Прізвище" type="text" name="4" required>
+                <input type="button" value="Send" onclick=validateAndSubmitForm()>
             </form>
         </section>
         <section class="about-section">
-            <img class="about-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
+            <img class="about-img" src="{% static 'img/photo_5458760346836784154_x.jpg' %}">
             <div class="about-text-box">
                 <h2 class="about-title">про проєкт</h2>
                 <p class="about-text">Poltava Smart City — це інформаційна екосистема, яка об’єднує полтавців, бізнес та
@@ -69,17 +70,17 @@
             <div class="vacancy-cards">
                 <!--                {% for vacancy in vacancies %}-->
                     <div class="vacancy-card">
-                        <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}" alt="">
+                        <img src="{% static 'img/photo_5458760346836784154_x.jpg' %}" alt="">
                         <h2>{{ vacancy.title }}</h2>
                         <p>{{ vacancy.content }}</p>
                     </div>
                     <div class="vacancy-card">
-                        <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}" alt="">
+                        <img src="{% static 'img/photo_5458760346836784154_x.jpg' %}" alt="">
                         <h2>{{ vacancy.title }}</h2>
                         <p>{{ vacancy.content }}</p>
                     </div>
                     <div class="vacancy-card">
-                        <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}" alt="">
+                        <img src="{% static 'img/photo_5458760346836784154_x.jpg' %}" alt="">
                         <h2>{{ vacancy.title }}</h2>
                         <p>{{ vacancy.content }}</p>
                     </div>
@@ -94,13 +95,13 @@
             <div class="news-cards">
                 <!--                {% for new in news %}-->
                     <div class="news-card">
-                        <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}" alt="">
+                        <img src="{% static 'img/photo_5458760346836784154_x.jpg' %}" alt="">
                         <p class="date">{{ new.date }}</p>
                         <h2>{{ new.title }}</h2>
                         <p>{{ new.content }}</p>
                     </div>
                     <div class="news-card">
-                        <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}" alt="">
+                        <img src="{% static 'img/photo_5458760346836784154_x.jpg' %}" alt="">
                         <p class="date">{{ new.date }}</p>
                         <h2>{{ new.title }}</h2>
                         <p>{{ new.content }}</p>
@@ -110,13 +111,51 @@
             </div>
         </section>
         <footer>
-           <img src="../static/img/photo_5458760346836784154_x.jpg">
+            <img src="../static/img/photo_5458760346836784154_x.jpg">
             <p>+38(094)9632485</p>
             <p>office@smartcity.pl.ua</p>
             <p>м.Полтава, вул.Гоголя,12, оф.501</p>
         </footer>
     </main>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    function validateAndSubmitForm() {
+        const input1 = document.querySelector('input[name="1"]').value;
+        const input2 = document.querySelector('input[name="2"]').value;
+        const input3 = document.querySelector('input[name="3"]').value;
+        const input4 = document.querySelector('input[name="4"]').value;
+        if (!input1 || !input2 || !input3 || !input4) {
+            alert('All fields are required. Please fill them in.');
+            return;
+        }
+        submitForm();
+    }
 
+    function submitForm() {
+        const input1 = document.querySelector('input[name="1"]').value;
+        const input2 = document.querySelector('input[name="2"]').value;
+        const input3 = document.querySelector('input[name="3"]').value;
+        const input4 = document.querySelector('input[name="4"]').value;
+
+        const data = {
+            'name': input1,
+            'phone': input2,
+            'email': input3,
+            'message': input4,
+        }
+
+        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+        fetch('{% url 'resume' %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken,
+            },
+            body: JSON.stringify(data),
+        })
+    }
+</script>
 </body>
 </html>

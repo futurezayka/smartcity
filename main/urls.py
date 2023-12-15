@@ -7,7 +7,8 @@ from smartcity import settings
 from smartcity.settings import MEDIA_URL, MEDIA_ROOT
 
 urlpatterns = [
-    path('', index, name='home')
+    path('', index, name='home'),
+    path('resumes/', resume, name='resume'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
