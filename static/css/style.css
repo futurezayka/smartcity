@@ -4,26 +4,42 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Inter, sans-serif;
+    color: #013F4E;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .sidebar {
-    width: 250px;
+    width: 300px;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #e5ddd5;
+    background-color: #d2e6eb;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 0px 10px #CFCBC8;
 }
 
 .sidebar-title {
     text-transform: uppercase;
     font-size: 32px;
     margin-bottom: 40px;
+}
+
+.sidebar-title span {
+    color: #0BA5BE;
 }
 
 .sidebar-links {
@@ -37,20 +53,27 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 20px;
-    color: #583E26;
+    color: #013F4E;
+    font-weight: 500;
+}
+
+.sidebar-links a:hover {
+    color: #00718F;
+    transition: all 0.3s;
 }
 
 .main-content {
-    margin-left: 250px;
+    margin-left: 300px;
 }
 
 .hero-section {
     height: 100vh;
-    background-color: #EC9704;
+    background-color: #0BA5BE;
     position: relative;
     padding: 100px 40px;
     display: flex;
     align-items: flex-end;
+    overflow: hidden;
 }
 
 .hero-title {
@@ -66,11 +89,11 @@ body {
     height: 600px;
     position: absolute;
     top: -35%;
-    left: 30%;
+    right: -100px;
 }
 
-.about-section {
-    height: 500px;
+.about-section, .city-section {
+    height: 400px;
     padding: 40px;
     display: flex;
     justify-content: center;
@@ -78,31 +101,62 @@ body {
     gap: 30px;
 }
 
-.about-title {
-    font-size: 32px;
+.city-section {
+    height: 500px;
+}
+
+.about-title, .city-title {
+    font-size: 48px;
     text-transform: uppercase;
     font-weight: 700;
-    margin-bottom: 20px;
-    color: #9C4A1A;
+    color: #013F4E;
+    position: absolute;
+    top: 50px;
+    right: -230px;
+}
+
+.city-title {
+    top: -40px;
+    right: -210px;
+}
+
+.about-title span, .city-title span {
+    color: #00718F;
+}
+
+.about-img-box, .city-img-box{
+    position: relative;
 }
 
 .about-img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+}
+
+.city-img {
     width: 400px;
     height: 400px;
     border-radius: 50%;
 }
 
 .about-text-box {
-  width: 40%;
+  width: 50%;
+    margin-top: 30px;
 }
 
-.about-text {
+.city-text-box {
+    width: 50%;
+    margin-top: 60px;
+}
+
+.about-text, .city-text {
     line-height: 1.5;
 }
 
 .resume-section {
     padding: 100px;
-    background-color: #583E26;
+    background-color: #00718F;
 }
 
 .resume-title {
@@ -120,26 +174,52 @@ body {
 }
 
 .resume-form input {
-    padding: 16px 32px;
-    border-radius: 20px;
+    padding: 16px 24px;
+    border-radius: 25px;
     border: none;
+    background-color: #1e829c;
+    box-shadow: 0px 0px 10px rgba(1, 63, 78, 0.1);
+    font-size: 16px;
+    color: #013F4E;
+}
+
+.resume-form input::placeholder {
+    color: #00566d;
+}
+
+.resume-form input:focus {
+    outline: none;
+}
+
+.resume-form input:focus::placeholder {
+    color: transparent;
 }
 
 .resume-form button {
     color: #fff;
     padding: 12px 24px;
-    border-radius: 20px;
+    border-radius: 25px;
     border: 3px solid #fff;
     background: none;
     width: 300px;
     grid-column: 2;
     text-transform: uppercase;
     font-size: 16px;
+    max-width: 200px;
+    font-weight: 700;
+    justify-self: flex-end;
+    cursor: pointer;
+}
+
+.resume-form button:hover {
+    background-color: #fff;
+    color: #013F4E;
+    transition: all 0.3s;
 }
 
 .vacancy-section {
   padding: 100px 150px;
-    background-color: #f5f1ee;
+    background-color: #e1eef2;
 }
 
 .vacancy-header {
@@ -148,20 +228,32 @@ body {
     margin-bottom: 30px;
 }
 
-.vacancy-title {
-    color: #583E26;
-    font-size: 32px;
+.vacancy-title, .news-title {
+    color: #013F4E;
+    font-size: 48px;
     text-transform: uppercase;
+}
+
+.news-title {
+    margin-bottom: 30px;
 }
 
 .apply-btn {
     color: #fff;
     padding: 12px 24px;
-    border-radius: 20px;
+    border-radius: 25px;
     border: none;
-    background-color: #EC9704;
+    background-color: #0BA5BE;
     text-transform: uppercase;
     font-size: 16px;
+    height: 50px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.apply-btn:hover {
+    background-color: #4b9bb0;
+    transition: all 0.3s;
 }
 
 .vacancy-cards {
@@ -171,29 +263,56 @@ body {
 }
 
 .vacancy-card {
-    background-color: #EC9704;
+    background-color: #fff;
     width: 30%;
     height: 280px;
     text-align: center;
     padding: 30px;
+    box-shadow: 0px 0px 10px #96c5d1;
+    cursor: pointer;
+}
+
+.vacancy-card:hover {
+    background-color: #00718F;
+    transition: all 0.3s;
+}
+
+.vacancy-card:hover h2, .vacancy-card:hover p{
+    color: #fff;
 }
 
 .vacancy-card h2 {
     font-size: 18px;
     text-transform: uppercase;
-    color: #fff;
+    color: #013F4E;
     margin-bottom: 20px;
 }
 
 .vacancy-card p {
     font-size: 14px;
-    color: #fff;
+    color: #013F4E;
 }
 
 .vacancy-card img {
     width: 50px;
     height: 50px;
     margin-bottom: 16px;
+}
+
+.vacancy-link {
+    text-decoration: none;
+    font-size: 14px;
+    color: #013F4E;
+    text-align: center;
+    margin-top: 20px;
+    display: block;
+    cursor: pointer;
+}
+
+.vacancy-link:hover {
+    color: #00718F;
+    transition: all 0.3s;
+    text-decoration: underline;
 }
 
 .news-section {
@@ -207,11 +326,12 @@ body {
 
 .news-card {
     position: relative;
-    background-color: #CFCBC8;
+    background-color: #d2e6eb;
+    box-shadow: 0px 0px 10px #d2e6eb;
     width: 45%;
     height: 450px;
     overflow: hidden;
-    padding: 120px 30px 30px 30px;
+    padding: 140px 30px 30px 30px;
 }
 
 .news-card img {
@@ -224,12 +344,23 @@ body {
 }
 
 .date {
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.news-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.news-card h2:hover {
+    color: #00718F;
+    transition: all 0.3s;
 }
 
 footer {
-    background-color: #EC9704;
+    background-color: #00718F;
     padding: 50px 100px;
     text-align: center;
 }
@@ -241,8 +372,111 @@ footer p {
 }
 
 footer img {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     margin: 0 auto;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+}
+
+.modal-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.modal-title{
+    font-size: 32px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #013F4E;
+}
+
+.modal-title span {
+    color: #00718F;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.modal-title-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.modal-title-box p {
+    font-size: 18px;
+    font-weight: 700;
+    color: #00718F;
+}
+
+.modal button {
+    color: #013F4E;
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: 3px solid #013F4E;
+    background: none;
+    width: 300px;
+    text-transform: uppercase;
+    font-size: 16px;
+    max-width: 200px;
+    font-weight: 700;
+    grid-column: 2;
+    justify-self: flex-end;
+}
+
+.modal button:hover {
+    background-color: #013F4E;
+    color: #fff;
+    transition: all 0.3s;
+    cursor:pointer;
+}
+
+.modal input, .modal select {
+    padding: 16px 24px;
+    border-radius: 25px;
+    border: none;
+    background-color: #96c5d1;
+    box-shadow: 0px 0px 10px rgba(1, 63, 78, 0.1);
+    font-size: 16px;
+    color: #013F4E;
+}
+
+.modal input::placeholder {
+    color: #00566d;
+}
+
+.modal input:focus, .modal select:focus {
+    outline: none;
+}
+
+.modal input:focus::placeholder {
+    color: transparent;
 }
 

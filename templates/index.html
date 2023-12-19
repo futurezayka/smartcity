@@ -3,23 +3,28 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Лендинг с фиксированным сайдбаром</title>
+    <title>Kyiv SmartCity</title>
 
 <!--    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">-->
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="путь_к_вашей_иконке.ico" type="image/x-icon">
 </head>
 
 <body>
 <div class="box">
     <div class="sidebar">
         <div class="sidebar-content">
-            <h2 class="sidebar-title">Kyiv <br>
-                <span>smart city</span></h2>
+            <h2 class="sidebar-title">
+                <span>Kyiv</span> <br>
+                smart city</h2>
             <ul class="sidebar-links">
-                <a href="#">про проєкт</a>
-                <a href="#">робоча група</a>
-                <a href="#">вакансії</a>
-                <a href="#">новини</a>
+                <a href="#about">про проєкт</a>
+                <a href="#resume">робоча група</a>
+                <a href="#vacancy">вакансії</a>
+                <a href="#news">новини</a>
             </ul>
         </div>
     </div>
@@ -27,74 +32,111 @@
         <section class="hero-section">
             <h2 class="hero-title">Kyiv <br>
                 <span>smart city</span></h2>
-            <img class="hero-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
+<!--            <img class="hero-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">-->
+            <img class="hero-img" src="../static/img/photo_5458760346836784154_x.jpg">
         </section>
-        <section class="about-section">
-            <img class="about-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
-            <div class="about-text-box">
-                <h2 class="about-title">про проєкт</h2>
-                <p class="about-text">Poltava Smart City — це інформаційна екосистема, яка об’єднує полтавців, бізнес та
-                    владу задля перетворення
-                    Полтави на цифрове та прогресивне місто. Робота ініціативи базується на принципах відкритих даних,
-                    розумного використання цифрових послуг та прозорого управління. Місто у смартфоні — це основна ідея
-                    проекту.</p>
+        <section class="about-section" id="about">
+                <!--            <img class="about-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">-->
+                <div class="about-img-box">
+                    <img class="about-img" src="../static/img/photo_5458760346836784154_x.jpg">
+                    <h2 class="about-title"><span>про</span> проєкт</h2>
+                </div>
+                <div class="about-text-box">
+                    <p class="about-text">Kyiv Smart City — це інформаційна екосистема, яка об’єднує киян, бізнес та
+                        владу задля перетворення
+                        Києва на цифрове та прогресивне місто. Робота ініціативи базується на принципах відкритих даних,
+                        розумного використання цифрових послуг та прозорого управління. Місто у смартфоні — це основна ідея
+                        проекту.</p>
+                </div>
+        </section>
+        <section class="resume-section" id="resume">
+            <div class="container">
+                <h3 class="resume-title">долучитися до роботи</h3>
+                <form class="resume-form">
+                    <input placeholder="Ім'я" type="text">
+                    <input placeholder="Прізвище" type="text">
+                    <input placeholder="Електронна адреса" type="text">
+                    <input placeholder="Спеціалізація" type="text">
+                    <button type="submit">Відправити</button>
+                </form>
             </div>
         </section>
-        <section class="resume-section">
-            <h3 class="resume-title">долучитися до роботи</h3>
-            <form class="resume-form">
-                <input placeholder="Ім'я">
-                <input placeholder="Ім'я">
-                <input placeholder="Ім'я">
-                <input placeholder="Ім'я">
-                <button type="submit">Відправити</button>
-            </form>
+        <section class="city-section">
+                <!--            <img class="city-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">-->
+                <div class="city-img-box">
+                    <img class="city-img" src="../static/img/photo_5458760346836784154_x.jpg">
+                    <h2 class="city-title"><span>місто</span> у <br>твоєму <br>смартфоні</h2>
+                </div>
+                <div class="city-text-box">
+                    <p class="city-text">Разом з будівництвом екосистеми, що полягатиме
+                        у грунтовних інфраструктурних змінах, ми маємо забезпечити максимальну зручність у отриманні
+                        киянами послуг. Все це можливо реалізувати за допомогою сучасних інформаційних технологій.
+                        Комунікація з владою, отримання адміністративних послуг, інформація про транспорт, участь у житті міста — все це і
+                        багато іншого буде у смартфоні кожного киянина.</p>
+                </div>
         </section>
-        <section class="about-section">
-            <img class="about-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
-            <div class="about-text-box">
-                <h2 class="about-title">про проєкт</h2>
-                <p class="about-text">Poltava Smart City — це інформаційна екосистема, яка об’єднує полтавців, бізнес та
-                    владу задля перетворення
-                    Полтави на цифрове та прогресивне місто. Робота ініціативи базується на принципах відкритих даних,
-                    розумного використання цифрових послуг та прозорого управління. Місто у смартфоні — це основна ідея
-                    проекту.</p>
-            </div>
-        </section>
-        <section class="vacancy-section">
-            <div class="vacancy-header">
-                <h3 class="vacancy-title">Вакансії</h3>
-                <button class="apply-btn">Подати заявку</button>
-            </div>
-            <div class="vacancy-cards">
-                <!--                {% for vacancy in vacancies %}-->
-                    <div class="vacancy-card">
+        <section class="vacancy-section" id="vacancy">
+            <div class="container">
+                <div class="vacancy-header">
+                    <h3 class="vacancy-title">Вакансії</h3>
+                    <button class="apply-btn" onclick="openModal()">Подати заявку</button>
+                </div>
+                <div class="vacancy-cards">
+                    <!--                {% for vacancy in vacancies %}-->
+                    <div class="vacancy-card" onclick="openModal()">
                         <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}" alt="">
                         <h2>{{ vacancy.title }}</h2>
                         <p>{{ vacancy.content }}</p>
                     </div>
-                    <div class="vacancy-card">
+                    <div class="vacancy-card" onclick="openModal()">
                         <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}" alt="">
                         <h2>{{ vacancy.title }}</h2>
                         <p>{{ vacancy.content }}</p>
                     </div>
-                    <div class="vacancy-card">
+                    <div class="vacancy-card" onclick="openModal()">
                         <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}" alt="">
                         <h2>{{ vacancy.title }}</h2>
                         <p>{{ vacancy.content }}</p>
                     </div>
                     <!--                {% endfor %}-->
+                </div>
+                <a class="vacancy-link">Більше вакансій</a>
+
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span onclick="closeModal()" class="close">&times;</span>
+                        <div class="modal-title-box">
+                            <h2 class="modal-title"><span>подати</span> заявку</h2>
+                            <p>Заповніть усі поля для подання заявки</p>
+                        </div>
+                        <form class="modal-form">
+                            <input placeholder="Ім'я" type="text">
+                            <input placeholder="Прізвище" type="text">
+                            <input placeholder="Телефон" type="text">
+                            <select>
+                                <option value="option1" selected>Вакансія</option>
+                                <option value="option2">Керівник офісу SmartCity</option>
+                                <option value="option3">Асистент</option>
+                                <option value="option4">Координатор проєкту</option>
+                                <option value="option5">SMM-менеджер</option>
+                                <option value="option6">PR-менеджер</option>
+                                <option value="option7">Frontend Developer</option>
+                                <option value="option8">Backend Developer</option>
+                            </select>
+                            <button type="submit">Відправити</button>
+                        </form>
+                    </div>
+                </div>
             </div>
+
         </section>
-        <section class="news-section">
-            <div class="vacancy-header">
-                <h3 class="vacancy-title">Новини</h3>
-                <button class="apply-btn">Всі новини</button>
-            </div>
-            <div class="news-cards">
-                <!--                {% for new in news %}-->
+        <section class="news-section" id="news">
+            <div class="container">
+                <h3 class="news-title">Новини</h3>
+                <div class="news-cards">
+                    <!--                {% for new in news %}-->
                     <div class="news-card">
-                        <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}" alt="">
+                        <img src="../static/img/photo_5458760346836784154_x.jpg" alt="">
                         <p class="date">{{ new.date }}</p>
                         <h2>{{ new.title }}</h2>
                         <p>{{ new.content }}</p>
@@ -107,16 +149,34 @@
 
                     </div>
                     <!--                {% endfor %}-->
+                </div>
             </div>
+
         </section>
         <footer>
            <img src="../static/img/photo_5458760346836784154_x.jpg">
             <p>+38(094)9632485</p>
-            <p>office@smartcity.pl.ua</p>
-            <p>м.Полтава, вул.Гоголя,12, оф.501</p>
+            <p>office@smartcity.kyiv.ua</p>
+            <p>м.Київ, бул.Шевченка,12, оф.501</p>
         </footer>
     </main>
 </div>
 
+<script>
+    function openModal() {
+        document.getElementById('myModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('myModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        var modal = document.getElementById('myModal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+</script>
 </body>
 </html>
