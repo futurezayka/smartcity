@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <title>Kyiv SmartCity</title>
 
-<!--    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">-->
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+<!--    <link rel="stylesheet" type="text/css" href="../static/css/style.css">-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="путь_к_вашей_иконке.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -32,13 +31,11 @@
         <section class="hero-section">
             <h2 class="hero-title">Kyiv <br>
                 <span>smart city</span></h2>
-<!--            <img class="hero-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">-->
-            <img class="hero-img" src="../static/img/photo_5458760346836784154_x.jpg">
+            <img class="hero-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
         </section>
         <section class="about-section" id="about">
-                <!--            <img class="about-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">-->
                 <div class="about-img-box">
-                    <img class="about-img" src="../static/img/photo_5458760346836784154_x.jpg">
+                    <img class="about-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
                     <h2 class="about-title"><span>про</span> проєкт</h2>
                 </div>
                 <div class="about-text-box">
@@ -51,20 +48,20 @@
         </section>
         <section class="resume-section" id="resume">
             <div class="container">
-                <h3 class="resume-title">долучитися до роботи</h3>
+                <h3 class="resume-title">Долучитися до роботи</h3>
                 <form class="resume-form">
-                    <input placeholder="Ім'я" type="text">
-                    <input placeholder="Прізвище" type="text">
-                    <input placeholder="Електронна адреса" type="text">
-                    <input placeholder="Спеціалізація" type="text">
-                    <button type="submit">Відправити</button>
+                    {% csrf_token %}
+                    <input placeholder="Ім'я" type="text" name="name">
+                    <input placeholder="Прізвище" type="text" name="surname">
+                    <input placeholder="Електронна адреса" type="text" name="email">
+                    <input placeholder="Спеціалізація" type="text" name="spec">
+                    <input class="resume-send-button" type="button" value="Відправити" onclick=validateAndSubmitForm()>
                 </form>
             </div>
         </section>
         <section class="city-section">
-                <!--            <img class="city-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">-->
                 <div class="city-img-box">
-                    <img class="city-img" src="../static/img/photo_5458760346836784154_x.jpg">
+                    <img class="city-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
                     <h2 class="city-title"><span>місто</span> у <br>твоєму <br>смартфоні</h2>
                 </div>
                 <div class="city-text-box">
@@ -82,24 +79,14 @@
                     <button class="apply-btn" onclick="openModal()">Подати заявку</button>
                 </div>
                 <div class="vacancy-cards">
-                    <!--                {% for vacancy in vacancies %}-->
-                    <div class="vacancy-card" onclick="openModal()">
-                        <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}" alt="">
-                        <h2>{{ vacancy.title }}</h2>
-                        <p>{{ vacancy.content }}</p>
-                    </div>
-                    <div class="vacancy-card" onclick="openModal()">
-                        <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}" alt="">
-                        <h2>{{ vacancy.title }}</h2>
-                        <p>{{ vacancy.content }}</p>
-                    </div>
-                    <div class="vacancy-card" onclick="openModal()">
-                        <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}" alt="">
-                        <h2>{{ vacancy.title }}</h2>
-                        <p>{{ vacancy.content }}</p>
-                    </div>
-                    <!--                {% endfor %}-->
-                </div>
+                    {% for vacancy in vacancies %}
+                        <div class="vacancy-card" onclick="openModal()">
+                            <img src="{{ vacancy.image.url }}" alt="">
+                            <h2>{{ vacancy.title }}</h2>
+                            <p>{{ vacancy.content }}</p>
+                        </div>
+                    {% endfor %}
+            </div>
                 <a class="vacancy-link">Більше вакансій</a>
 
                 <div id="myModal" class="modal">
@@ -134,34 +121,28 @@
             <div class="container">
                 <h3 class="news-title">Новини</h3>
                 <div class="news-cards">
-                    <!--                {% for new in news %}-->
-                    <div class="news-card">
-                        <img src="../static/img/photo_5458760346836784154_x.jpg" alt="">
-                        <p class="date">{{ new.date }}</p>
-                        <h2>{{ new.title }}</h2>
-                        <p>{{ new.content }}</p>
-                    </div>
-                    <div class="news-card">
-                        <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}" alt="">
-                        <p class="date">{{ new.date }}</p>
-                        <h2>{{ new.title }}</h2>
-                        <p>{{ new.content }}</p>
+                    {% for new in news %}
+                        <div class="news-card">
+                            <img src="{{ new.image.url }}" alt="">
+                            <p class="date">{{ new.date }}</p>
+                            <h2>{{ new.title }}</h2>
+                            <p>{{ new.content }}</p>
+                        </div>
 
-                    </div>
-                    <!--                {% endfor %}-->
+                {% endfor %}
                 </div>
             </div>
 
         </section>
         <footer>
-           <img src="../static/img/photo_5458760346836784154_x.jpg">
+            <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
             <p>+38(094)9632485</p>
             <p>office@smartcity.kyiv.ua</p>
             <p>м.Київ, бул.Шевченка,12, оф.501</p>
         </footer>
     </main>
 </div>
-
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
     function openModal() {
         document.getElementById('myModal').style.display = 'block';
@@ -172,11 +153,47 @@
     }
 
     window.onclick = function(event) {
-        var modal = document.getElementById('myModal');
+        let modal = document.getElementById('myModal');
         if (event.target === modal) {
             modal.style.display = 'none';
         }
     };
+    function validateAndSubmitForm() {
+        const name = document.querySelector('input[name="name"]').value;
+        const surname = document.querySelector('input[name="surname"]').value;
+        const email = document.querySelector('input[name="email"]').value;
+        const spec = document.querySelector('input[name="spec"]').value;
+        if (!name || !surname || !email || !spec) {
+            alert('Всі поля обов\'язкові до заповнення!');
+            return;
+        }
+        submitForm();
+    }
+
+    function submitForm() {
+        const name = document.querySelector('input[name="name"]').value;
+        const surname = document.querySelector('input[name="surname"]').value;
+        const email = document.querySelector('input[name="email"]').value;
+        const spec = document.querySelector('input[name="spec"]').value;
+
+        const data = {
+            'name': name,
+            'surname': surname,
+            'email': email,
+            'spec': spec,
+        }
+
+        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+        fetch('{% url "resume" %}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrfToken,
+            },
+            body: JSON.stringify(data),
+        })
+    }
 </script>
 </body>
 </html>

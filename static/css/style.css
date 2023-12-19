@@ -195,7 +195,7 @@ body {
     color: transparent;
 }
 
-.resume-form button {
+.resume-form .resume-send-button{
     color: #fff;
     padding: 12px 24px;
     border-radius: 25px;
@@ -211,7 +211,7 @@ body {
     cursor: pointer;
 }
 
-.resume-form button:hover {
+.resume-form .resume-send-button:hover {
     background-color: #fff;
     color: #013F4E;
     transition: all 0.3s;
