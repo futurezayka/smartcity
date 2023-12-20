@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Kyiv SmartCity</title>
+    <link rel="icon" href="../static/img/navigation.svg" type="image/x-icon">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
-<!--    <link rel="stylesheet" type="text/css" href="../static/css/style.css">-->
+<!--    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">-->
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,8 +18,7 @@
     <div class="sidebar">
         <div class="sidebar-content">
             <h2 class="sidebar-title">
-                <span>Kyiv</span> <br>
-                smart city</h2>
+                <span>smart</span><br> city</h2>
             <ul class="sidebar-links">
                 <a href="#about">про проєкт</a>
                 <a href="#resume">робоча група</a>
@@ -29,21 +29,26 @@
     </div>
     <main class="main-content">
         <section class="hero-section">
-            <h2 class="hero-title">Kyiv <br>
+            <h2 class="hero-title">
                 <span>smart city</span></h2>
-            <img class="hero-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
+            <img class="hero-img" src="{% static 'img/191126_005.jpg'%}">
+            <ul>
+                <li><a href="#"><img src="{% static 'img/instagram.svg'%}" alt=""></a></li>
+                <li><a href="#"><img src="{% static 'img/facebook.svg'%}" alt=""></a></li>
+                <li><a href="#"><img src="{% static 'img/telegram.svg'%}" alt=""></a></li>
+            </ul>
         </section>
         <section class="about-section" id="about">
                 <div class="about-img-box">
-                    <img class="about-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
-                    <h2 class="about-title"><span>про</span> проєкт</h2>
+                    <img class="about-img" src="{% static 'img/baran.jpg'%}">
                 </div>
                 <div class="about-text-box">
-                    <p class="about-text">Kyiv Smart City — це інформаційна екосистема, яка об’єднує киян, бізнес та
-                        владу задля перетворення
-                        Києва на цифрове та прогресивне місто. Робота ініціативи базується на принципах відкритих даних,
-                        розумного використання цифрових послуг та прозорого управління. Місто у смартфоні — це основна ідея
-                        проекту.</p>
+                    <h2 class="about-title"><span>про</span> проєкт</h2>
+                    <p class="about-text">Ласкаво просимо до нашого проєкту "Веб-сторінка Розумні міста"!
+                        Ми присвячені вивченню та просуванню інноваційних рішень для розумних міст, де технології сприяють
+                        покращенню якості життя громадян. На нашій веб-сторінці ви знайдете актуальні новини. Приєднуйтесь до нас
+                        у вивченні майбутнього, де інтернет речей, штучний інтелект та інші інноваційні технології формують міста,
+                        щоб зробити їх більш ефективними, екологічно чистими та зручними для всіх жителів.</p>
                 </div>
         </section>
         <section class="resume-section" id="resume">
@@ -61,15 +66,23 @@
         </section>
         <section class="city-section">
                 <div class="city-img-box">
-                    <img class="city-img" src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
-                    <h2 class="city-title"><span>місто</span> у <br>твоєму <br>смартфоні</h2>
+                    <img class="city-img" src="{% static 'img/city.jpg'%}">
                 </div>
                 <div class="city-text-box">
-                    <p class="city-text">Разом з будівництвом екосистеми, що полягатиме
-                        у грунтовних інфраструктурних змінах, ми маємо забезпечити максимальну зручність у отриманні
-                        киянами послуг. Все це можливо реалізувати за допомогою сучасних інформаційних технологій.
-                        Комунікація з владою, отримання адміністративних послуг, інформація про транспорт, участь у житті міста — все це і
-                        багато іншого буде у смартфоні кожного киянина.</p>
+                    <h2 class="city-title">Що таке <br> <span>розумне місто</span></h2>
+                    <p class="city-text">Актуальні розумні технології які активно впроваджують у розумні міста:</p>
+                    <ul>
+                        <li>Системи "розумного" освітлення</li>
+                        <li>Електронні системи оплати громадського транспорту</li>
+                        <li>Системи відокремлення та переробки сміття</li>
+                        <li>Мережі "розумних" камер для безпеки</li>
+                        <li>Електронні інформаційні дошки</li>
+                        <li>Мережі бездротового інтернету (Wi-Fi)</li>
+                        <li>Системи екологічного моніторингу</li>
+                        <li>Електричні транспортні засоби та зарядні станції</li>
+                        <li>Мобільні додатки для
+                            системи керування водоспоживанням</li>
+                    </ul>
                 </div>
         </section>
         <section class="vacancy-section" id="vacancy">
@@ -84,6 +97,7 @@
                             <img src="{{ vacancy.image.url }}" alt="">
                             <h2>{{ vacancy.title }}</h2>
                             <p>{{ vacancy.content }}</p>
+                            <img class="arrow" src="{% static 'img/rigth.svg'%}">
                         </div>
                     {% endfor %}
             </div>
@@ -127,6 +141,7 @@
                             <p class="date">{{ new.date }}</p>
                             <h2>{{ new.title }}</h2>
                             <p>{{ new.content }}</p>
+                            <img class="arrow" src="{% static 'img/rigth.svg'%}">
                         </div>
 
                 {% endfor %}
@@ -135,9 +150,9 @@
 
         </section>
         <footer>
-            <img src="{% static 'img/photo_5458760346836784154_x.jpg'%}">
+            <img src="{% static 'img/circle.svg'%}">
             <p>+38(094)9632485</p>
-            <p>office@smartcity.kyiv.ua</p>
+            <p>office@smartcity.ua</p>
             <p>м.Київ, бул.Шевченка,12, оф.501</p>
         </footer>
     </main>

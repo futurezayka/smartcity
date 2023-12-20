@@ -70,10 +70,23 @@ body {
     height: 100vh;
     background-color: #0BA5BE;
     position: relative;
-    padding: 100px 40px;
+    padding: 80px 40px;
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
     overflow: hidden;
+}
+
+.hero-section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.hero-section ul img:hover {
+    box-shadow: 0px 0px 10px #CFCBC8;
 }
 
 .hero-title {
@@ -103,6 +116,7 @@ body {
 
 .city-section {
     height: 500px;
+    align-items: flex-end;
 }
 
 .about-title, .city-title {
@@ -110,22 +124,11 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     color: #013F4E;
-    position: absolute;
-    top: 50px;
-    right: -230px;
-}
-
-.city-title {
-    top: -40px;
-    right: -210px;
+   margin-bottom: 20px;
 }
 
 .about-title span, .city-title span {
-    color: #00718F;
-}
-
-.about-img-box, .city-img-box{
-    position: relative;
+    color: #0BA5BE;
 }
 
 .about-img {
@@ -138,6 +141,16 @@ body {
     width: 400px;
     height: 400px;
     border-radius: 50%;
+}
+
+.city-text {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.city-text-box ul li {
+    margin-top: 8px;
+    font-size: 14px;
 }
 
 .about-text-box {
@@ -270,6 +283,7 @@ body {
     padding: 30px;
     box-shadow: 0px 0px 10px #96c5d1;
     cursor: pointer;
+    position: relative;
 }
 
 .vacancy-card:hover {
@@ -286,11 +300,13 @@ body {
     text-transform: uppercase;
     color: #013F4E;
     margin-bottom: 20px;
+    word-wrap: break-word;
 }
 
 .vacancy-card p {
     font-size: 14px;
     color: #013F4E;
+    word-wrap: break-word;
 }
 
 .vacancy-card img {
@@ -349,9 +365,14 @@ body {
     margin-bottom: 5px;
 }
 
+.news-card p {
+    word-wrap: break-word;
+}
+
 .news-card h2 {
     font-size: 24px;
     margin-bottom: 15px;
+    word-wrap: break-word;
 }
 
 .news-card h2:hover {
@@ -478,5 +499,13 @@ footer img {
 
 .modal input:focus::placeholder {
     color: transparent;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
 }
 
