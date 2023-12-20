@@ -76,33 +76,48 @@ body {
     justify-content: space-between;
     overflow: hidden;
 }
-
+.hero-section:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/font.png");
+    opacity: 0.4;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
 .hero-section ul {
     list-style: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    z-index: 2;
 }
-
-.hero-section ul img:hover {
-    box-shadow: 0px 0px 10px #CFCBC8;
+.hero-section ul img {
+    width: 50px;
+    height: 50px;
 }
 
 .hero-title {
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 96px;
     color: #fff;
+    z-index: 2;
 }
 
 .hero-img {
-    border-radius: 50%;
     width: 600px;
     height: 600px;
     position: absolute;
-    top: -35%;
-    right: -100px;
+    top: -30px;
+    right: -40px;
+    z-index: 2;
 }
 
 .about-section, .city-section {
@@ -124,7 +139,7 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     color: #013F4E;
-   margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .about-title span, .city-title span {
@@ -149,12 +164,13 @@ body {
 }
 
 .city-text-box ul li {
+    margin-left: 10px;
     margin-top: 8px;
     font-size: 14px;
 }
 
 .about-text-box {
-  width: 50%;
+    width: 50%;
     margin-top: 30px;
 }
 
@@ -190,7 +206,7 @@ body {
     padding: 16px 24px;
     border-radius: 25px;
     border: none;
-    background-color: #1e829c;
+    background-color: #96c5d1;
     box-shadow: 0px 0px 10px rgba(1, 63, 78, 0.1);
     font-size: 16px;
     color: #013F4E;
@@ -208,7 +224,7 @@ body {
     color: transparent;
 }
 
-.resume-form .resume-send-button{
+.resume-form .resume-send-button {
     color: #fff;
     padding: 12px 24px;
     border-radius: 25px;
@@ -231,7 +247,7 @@ body {
 }
 
 .vacancy-section {
-  padding: 100px 150px;
+    padding: 100px 150px;
     background-color: #e1eef2;
 }
 
@@ -284,6 +300,7 @@ body {
     box-shadow: 0px 0px 10px #96c5d1;
     cursor: pointer;
     position: relative;
+    margin-bottom: 30px;
 }
 
 .vacancy-card:hover {
@@ -291,7 +308,7 @@ body {
     transition: all 0.3s;
 }
 
-.vacancy-card:hover h2, .vacancy-card:hover p{
+.vacancy-card:hover h2, .vacancy-card:hover p {
     color: #fff;
 }
 
@@ -338,6 +355,7 @@ body {
 .news-cards {
     display: flex;
     justify-content: space-between;
+    gap: 15px;
 }
 
 .news-card {
@@ -347,7 +365,6 @@ body {
     width: 45%;
     height: 450px;
     overflow: hidden;
-    padding: 140px 30px 30px 30px;
 }
 
 .news-card img {
@@ -367,6 +384,8 @@ body {
 
 .news-card p {
     word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .news-card h2 {
@@ -409,6 +428,7 @@ footer img {
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto;
@@ -426,7 +446,7 @@ footer img {
     row-gap: 20px;
 }
 
-.modal-title{
+.modal-title {
     font-size: 32px;
     text-transform: uppercase;
     font-weight: 700;
@@ -457,7 +477,7 @@ footer img {
     color: #00718F;
 }
 
-.modal button {
+.modal input[type="button"] {
     color: #013F4E;
     padding: 12px 24px;
     border-radius: 25px;
@@ -472,11 +492,11 @@ footer img {
     justify-self: flex-end;
 }
 
-.modal button:hover {
+.modal input[type="button"]:hover {
     background-color: #013F4E;
     color: #fff;
     transition: all 0.3s;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .modal input, .modal select {

@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Kyiv SmartCity</title>
+    <title>SmartCity</title>
     <link rel="icon" href="../static/img/navigation.svg" type="image/x-icon">
 
-<!--    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">-->
+    <!--    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">-->
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,25 +31,27 @@
         <section class="hero-section">
             <h2 class="hero-title">
                 <span>smart city</span></h2>
-            <img class="hero-img" src="{% static 'img/191126_005.jpg'%}">
+            <img class="hero-img" src="{% static 'img/lampochka.png' %}">
             <ul>
-                <li><a href="#"><img src="{% static 'img/instagram.svg'%}" alt=""></a></li>
-                <li><a href="#"><img src="{% static 'img/facebook.svg'%}" alt=""></a></li>
-                <li><a href="#"><img src="{% static 'img/telegram.svg'%}" alt=""></a></li>
+                <li><a href="#"><img src="{% static 'img/instagram.svg' %}" alt=""></a></li>
+                <li><a href="#"><img src="{% static 'img/facebook.svg' %}" alt=""></a></li>
+                <li><a href="#"><img src="{% static 'img/telegram.svg' %}" alt=""></a></li>
             </ul>
         </section>
         <section class="about-section" id="about">
-                <div class="about-img-box">
-                    <img class="about-img" src="{% static 'img/baran.jpg'%}">
-                </div>
-                <div class="about-text-box">
-                    <h2 class="about-title"><span>про</span> проєкт</h2>
-                    <p class="about-text">Ласкаво просимо до нашого проєкту "Веб-сторінка Розумні міста"!
-                        Ми присвячені вивченню та просуванню інноваційних рішень для розумних міст, де технології сприяють
-                        покращенню якості життя громадян. На нашій веб-сторінці ви знайдете актуальні новини. Приєднуйтесь до нас
-                        у вивченні майбутнього, де інтернет речей, штучний інтелект та інші інноваційні технології формують міста,
-                        щоб зробити їх більш ефективними, екологічно чистими та зручними для всіх жителів.</p>
-                </div>
+            <div class="about-img-box">
+                <img class="about-img" src="{% static 'img/baran.jpg' %}">
+            </div>
+            <div class="about-text-box">
+                <h2 class="about-title"><span>про</span> проєкт</h2>
+                <p class="about-text">Ласкаво просимо до нашого проєкту "Веб-сторінка Розумні міста"!
+                    Ми присвячені вивченню та просуванню інноваційних рішень для розумних міст, де технології сприяють
+                    покращенню якості життя громадян. На нашій веб-сторінці ви знайдете актуальні новини. Приєднуйтесь
+                    до нас
+                    у вивченні майбутнього, де інтернет речей, штучний інтелект та інші інноваційні технології формують
+                    міста,
+                    щоб зробити їх більш ефективними, екологічно чистими та зручними для всіх жителів.</p>
+            </div>
         </section>
         <section class="resume-section" id="resume">
             <div class="container">
@@ -60,30 +62,32 @@
                     <input placeholder="Прізвище" type="text" name="surname">
                     <input placeholder="Електронна адреса" type="text" name="email">
                     <input placeholder="Спеціалізація" type="text" name="spec">
-                    <input class="resume-send-button" type="button" value="Відправити" onclick=validateAndSubmitForm()>
+                    <input class="resume-send-button" type="button" value="Відправити"
+                           onclick="validateAndSubmitForm('.resume-form', {% url 'resume' %})">
                 </form>
             </div>
         </section>
         <section class="city-section">
-                <div class="city-img-box">
-                    <img class="city-img" src="{% static 'img/city.jpg'%}">
-                </div>
-                <div class="city-text-box">
-                    <h2 class="city-title">Що таке <br> <span>розумне місто</span></h2>
-                    <p class="city-text">Актуальні розумні технології які активно впроваджують у розумні міста:</p>
-                    <ul>
-                        <li>Системи "розумного" освітлення</li>
-                        <li>Електронні системи оплати громадського транспорту</li>
-                        <li>Системи відокремлення та переробки сміття</li>
-                        <li>Мережі "розумних" камер для безпеки</li>
-                        <li>Електронні інформаційні дошки</li>
-                        <li>Мережі бездротового інтернету (Wi-Fi)</li>
-                        <li>Системи екологічного моніторингу</li>
-                        <li>Електричні транспортні засоби та зарядні станції</li>
-                        <li>Мобільні додатки для
-                            системи керування водоспоживанням</li>
-                    </ul>
-                </div>
+            <div class="city-img-box">
+                <img class="city-img" src="{% static 'img/city.jpg' %}">
+            </div>
+            <div class="city-text-box">
+                <h2 class="city-title">Що таке <br> <span>розумне місто</span></h2>
+                <p class="city-text">Актуальні розумні технології які активно впроваджують у розумні міста:</p>
+                <ul>
+                    <li>Системи "розумного" освітлення</li>
+                    <li>Електронні системи оплати громадського транспорту</li>
+                    <li>Системи відокремлення та переробки сміття</li>
+                    <li>Мережі "розумних" камер для безпеки</li>
+                    <li>Електронні інформаційні дошки</li>
+                    <li>Мережі бездротового інтернету (Wi-Fi)</li>
+                    <li>Системи екологічного моніторингу</li>
+                    <li>Електричні транспортні засоби та зарядні станції</li>
+                    <li>Мобільні додатки для
+                        системи керування водоспоживанням
+                    </li>
+                </ul>
+            </div>
         </section>
         <section class="vacancy-section" id="vacancy">
             <div class="container">
@@ -91,17 +95,8 @@
                     <h3 class="vacancy-title">Вакансії</h3>
                     <button class="apply-btn" onclick="openModal()">Подати заявку</button>
                 </div>
-                <div class="vacancy-cards">
-                    {% for vacancy in vacancies %}
-                        <div class="vacancy-card" onclick="openModal()">
-                            <img src="{{ vacancy.image.url }}" alt="">
-                            <h2>{{ vacancy.title }}</h2>
-                            <p>{{ vacancy.content }}</p>
-                            <img class="arrow" src="{% static 'img/rigth.svg'%}">
-                        </div>
-                    {% endfor %}
-            </div>
-                <a class="vacancy-link">Більше вакансій</a>
+                <div class="vacancy-cards"></div>
+                <a class="vacancy-link" onclick="loadVacancies()"></a>
 
                 <div id="myModal" class="modal">
                     <div class="modal-content">
@@ -111,20 +106,17 @@
                             <p>Заповніть усі поля для подання заявки</p>
                         </div>
                         <form class="modal-form">
-                            <input placeholder="Ім'я" type="text">
-                            <input placeholder="Прізвище" type="text">
-                            <input placeholder="Телефон" type="text">
+                            {% csrf_token %}
+                            <input placeholder="Ім'я" name="name" type="text">
+                            <input placeholder="Прізвище" name="surname" type="text">
+                            <input placeholder="Телефон" name="phone" type="text">
                             <select>
-                                <option value="option1" selected>Вакансія</option>
-                                <option value="option2">Керівник офісу SmartCity</option>
-                                <option value="option3">Асистент</option>
-                                <option value="option4">Координатор проєкту</option>
-                                <option value="option5">SMM-менеджер</option>
-                                <option value="option6">PR-менеджер</option>
-                                <option value="option7">Frontend Developer</option>
-                                <option value="option8">Backend Developer</option>
+                                {% for vacancy in vacancies_jinja %}
+                                    <option value="{{ vacancy.pk }}">{{ vacancy.title }}</option>
+                                {% endfor %}
                             </select>
-                            <button type="submit">Відправити</button>
+                            <input type="button" value="Відправити"
+                                   onclick="validateAndSubmitForm('.modal-form', {% url 'incoming_application' %})">
                         </form>
                     </div>
                 </div>
@@ -136,78 +128,182 @@
                 <h3 class="news-title">Новини</h3>
                 <div class="news-cards">
                     {% for new in news %}
-                        <div class="news-card">
-                            <img src="{{ new.image.url }}" alt="">
+                        <div class="news-card" style="{% if new.image %} padding: 140px 30px 30px 30px;
+                        {% else %}padding: 30px 30px 30px 30px;
+                        {% endif %}">
+                            {% if new.image %}
+                                <img src="{{ new.image.url }}" alt="">
+                            {% endif %}
                             <p class="date">{{ new.date }}</p>
                             <h2>{{ new.title }}</h2>
                             <p>{{ new.content }}</p>
-                            <img class="arrow" src="{% static 'img/rigth.svg'%}">
                         </div>
 
-                {% endfor %}
+                    {% endfor %}
                 </div>
             </div>
 
         </section>
         <footer>
-            <img src="{% static 'img/circle.svg'%}">
+            <img src="{% static 'img/circle.svg' %}">
             <p>+38(094)9632485</p>
             <p>office@smartcity.ua</p>
-            <p>м.Київ, бул.Шевченка,12, оф.501</p>
         </footer>
     </main>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-    function openModal() {
+
+    function loadVacancies(slice_index) {
+        const vacancies = JSON.parse('{{ vacancies|safe|escapejs }}');
+        const vacancyCardsContainer = document.querySelector('.vacancy-cards');
+        const button = document.querySelector('.vacancy-link');
+
+        vacancyCardsContainer.innerHTML = '';
+
+        if (slice_index === undefined) {
+            button.textContent = 'Менше вакансій';
+            button.onclick = () => loadVacancies(3);
+            vacancies.forEach((vacancy) => {
+                createVacancyCard(vacancy);
+            });
+        } else {
+            button.textContent = 'Більше вакансій';
+            button.onclick = () => loadVacancies();
+            for (let i = 0; i < slice_index && i < vacancies.length; i++) {
+                const vacancy = vacancies[i];
+                createVacancyCard(vacancy);
+            }
+        }
+
+        function createVacancyCard(vacancy) {
+            const vacancyCard = document.createElement('div');
+            vacancyCard.className = 'vacancy-card';
+            vacancyCard.setAttribute('data-pk', `${vacancy.pk}`);
+            vacancyCard.addEventListener('click', function () {
+                openModal(`${vacancy.pk}`);
+            });
+            const title = document.createElement('h2');
+            title.innerText = vacancy.fields.title;
+            vacancyCard.appendChild(title);
+
+            const content = document.createElement('p');
+            content.innerText = vacancy.fields.content;
+            vacancyCard.appendChild(content);
+
+            if (vacancy.fields.image) {
+                const image = document.createElement('img');
+                image.src = vacancy.fields.image.url;
+                vacancyCard.appendChild(image);
+            }
+
+            const icon = document.createElement('img');
+            icon.src = '{% static 'img/right.svg' %}';
+            icon.className = 'arrow';
+            vacancyCard.appendChild(icon);
+
+            vacancyCardsContainer.appendChild(vacancyCard);
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        loadVacancies(3);
+    });
+
+    function openModal(vacancy_pk) {
         document.getElementById('myModal').style.display = 'block';
+        const options = document.querySelector('.modal-form select').options;
+        if (vacancy_pk === undefined) {
+            options[0].selected = true;
+        } else {
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].value === vacancy_pk) {
+                    options[i].selected = true;
+                    break;
+                }
+            }
+        }
     }
 
     function closeModal() {
         document.getElementById('myModal').style.display = 'none';
     }
 
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         let modal = document.getElementById('myModal');
         if (event.target === modal) {
             modal.style.display = 'none';
         }
     };
-    function validateAndSubmitForm() {
-        const name = document.querySelector('input[name="name"]').value;
-        const surname = document.querySelector('input[name="surname"]').value;
-        const email = document.querySelector('input[name="email"]').value;
-        const spec = document.querySelector('input[name="spec"]').value;
-        if (!name || !surname || !email || !spec) {
+
+    function validateAndSubmitForm(form_class, endpoint) {
+        const form = document.querySelector(form_class);
+        const inputs = Array.from(form.querySelectorAll('input')).filter(input => input.type !== 'button');
+        if (inputs.some(input => input.value === '')) {
             alert('Всі поля обов\'язкові до заповнення!');
             return;
         }
-        submitForm();
+        submitForm(form_class, endpoint);
     }
 
-    function submitForm() {
-        const name = document.querySelector('input[name="name"]').value;
-        const surname = document.querySelector('input[name="surname"]').value;
-        const email = document.querySelector('input[name="email"]').value;
-        const spec = document.querySelector('input[name="spec"]').value;
+    function successRequest(form) {
 
-        const data = {
-            'name': name,
-            'surname': surname,
-            'email': email,
-            'spec': spec,
-        }
+        const inputsAndSelects = Array.from(form.querySelectorAll('input, select')).filter(element => element.type !== 'button');
 
+        inputsAndSelects.forEach(inputOrSelect => {
+            inputOrSelect.style.transition = 'background-color 3s';
+            inputOrSelect.style.backgroundColor = 'rgba(76, 173, 140, 0.98)';
+        });
+
+        setTimeout(() => {
+            inputsAndSelects.forEach(input => {
+                input.style.transition = 'background-color 3s';
+                input.style.backgroundColor = '#96c5d1';
+                closeModal();
+            });
+        }, 3000);
+    }
+
+    function submitForm(form_class, endpoint) {
+        const form = document.querySelector(form_class);
+        const formData = new FormData(form);
         const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
-        fetch('{% url "resume" %}', {
+        const formObject = {};
+
+        formData.forEach((value, key) => {
+            formObject[key] = value;
+        });
+
+        if (form_class === '.modal-form') {
+            const selectedOption = form.querySelector('select option:checked');
+            formObject['vacancy_pk'] = selectedOption ? selectedOption.value : null;
+        }
+
+        fetch(endpoint, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'X-CSRFToken': csrfToken,
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(formObject),
         })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(jsonData => {
+                if (jsonData.status === 'ok') {
+                    form.reset();
+                    successRequest(form);
+                }
+            })
+            .catch(error => {
+                console.error('Error during fetch operation:', error);
+            });
+
     }
 </script>
 </body>
